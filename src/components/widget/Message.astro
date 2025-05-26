@@ -1,0 +1,107 @@
+---
+const {
+  character = "Master",
+  direction = "left",
+  nameProp,
+  imageURLProp,
+  actionProp,
+  children,
+} = Astro.props;
+
+const defaultCharacterDetails = {
+  MonkToLeft: {
+    imageURL: "/characters/young-monk-towards-left.jpg",
+    name: "Tăng",
+    action: "hỏi",
+  },
+  MonkToRight: {
+    imageURL: "/characters/young-monk-towards-right.jpg",
+    name: "Tăng",
+    action: "hỏi",
+  },
+  Master: {
+    imageURL: "/characters/old-monk.jpg",
+    name: "Sư",
+    action: "nói",
+  },
+  Other: {
+    imageURL: "/characters/other-monk.jpg",
+    name: "Tăng khác",
+    action: "hỏi",
+  },
+};
+
+const defaults = defaultCharacterDetails[character];
+const name = nameProp ?? defaults.name;
+const imageURL = imageURLProp ?? defaults.imageURL;
+const action = actionProp ?? defaults.action;
+
+const isTextWithTrees = typeof children === "string" && children.includes("🌳");
+const treeSegments = isTextWithTrees ? children.split("🌳").map(s => s.trim()).filter(Boolean) : [];
+---
+<div
+    data-direction={direction}
+    class="mt-4 mb-4 flex w-full gap-2 data-[direction=right]:flex-row-reverse"
+>
+  <img
+      class="not-prose size-12 flex-shrink-0 rounded-full bg-slate-300 object-cover"
+      src={imageURL}
+      alt={`${name} profile-pic`}
+      height="50"
+      width="50"
+      loading="lazy"
+  />
+
+  <div class="overflow-hidden">
+    <p
+        data-direction={direction}
+        class="not-prose m-0 text-sm text-gray-500 data-[direction=right]:text-right"
+    >
+      {name}{action ? ` ${action}` : ""}
+    </p>
+
+    <div class="message-segments space-y-3">
+      {isTextWithTrees ? (
+          treeSegments.map((segment, index) => (
+              <div class="message-part hidden w-full max-w-2xl rounded-md bg-primary/20 p-4 [&>*]:!mt-0 transition-opacity duration-300 opacity-0" style="transition: opacity 0.3s ease-in;">
+                🌳 {segment}
+              </div>
+          ))
+      ) : (
+          <div class="w-full max-w-2xl rounded-md bg-primary/20 p-4 [&>*]:!mt-0">
+            <slot />
+          </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<script>
+  // progressive reveal with speech synthesis
+  setTimeout(() => {
+    const segments = document.querySelectorAll('.message-part');
+    const synth = window.speechSynthesis;
+
+    segments.forEach((el, idx) => {
+      setTimeout(() => {
+        el.classList.remove('hidden');
+        el.classList.add('opacity-100');
+
+        const text = el.dataset.segment;
+        if (synth && text) {
+          const utter = new SpeechSynthesisUtterance(text);
+          utter.lang = 'vi-VN'; // tiếng Việt
+          synth.speak(utter);
+        }
+
+        // Click to repeat
+        el.addEventListener('click', () => {
+          const repeat = new SpeechSynthesisUtterance(text);
+          repeat.lang = 'vi-VN';
+          synth.speak(repeat);
+        });
+
+      }, 800 * idx);
+    });
+  }, 200);
+</script>
