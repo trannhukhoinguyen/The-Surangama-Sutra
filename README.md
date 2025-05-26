@@ -10,3 +10,12 @@
 - Biên tập : Chúng đệ tử Đời Thứ Ba Tây Tạng Tự (ẤN BẢN LẦN THỨ NHẤT 1997)
 
 
+# Read online 1: https://thuvienhoasen.org/p17a1216/muc-luc-chi-tiet
+
+# Read online 2: https://nigioikhatsi.net/viet/gianggiai/kinhthulangnghiemtongthong/ktlgtongnghia-00.htm
+
+# PDF: https://nigioikhatsi.net/kinhsach-pdf/thulangnghiem-tongthong.pdf
+
+# Youtube 1: https://www.youtube.com/watch?v=e5qP5EZ9BUY&list=PLoeo1OB7dRzqZ1C1-pPW9js8iB5CpxGmE
+
+# Youtube 2: https://www.youtube.com/watch?v=NQ5yGMXZYq4&list=PL7J89UzxhHJIRvf-RSDoaT0O_vnIdSUti
