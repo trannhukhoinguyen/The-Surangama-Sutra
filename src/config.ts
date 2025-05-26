@@ -57,21 +57,9 @@ export const profileConfig: ProfileConfig = {
 	bio: "ĐẠI PHẬT ĐẢNH NHƯ LAI MẬT NHÂN TU CHỨNG LIỄU NGHĨA CHƯ BỒ TÁT VẠN HẠNH THỦ LĂNG NGHIÊM KINH TÔNG THÔNG ",
 	links: [
 		{
-			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
-			// You will need to install the corresponding icon set if it's not already included
-			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://twitter.com",
-		},
-		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
-		},
-		{
-			name: "GitHub",
-			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
+			name: "Nghe Kinh",
+			icon: "fa6-brands:youtube",
+			url: "https://www.youtube.com/watch?v=e5qP5EZ9BUY&list=PLoeo1OB7dRzqZ1C1-pPW9js8iB5CpxGmE",
 		},
 	],
 };
