@@ -7,7 +7,7 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "Fuwari",
+	title: "Śūraṅgama Sutra",
 	subtitle: "Demo Site",
 	lang: "en", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
@@ -53,8 +53,8 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Lorem Ipsum",
-	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	name: "KINH THỦ LĂNG NGHIÊM TÔNG THÔNG",
+	bio: "ĐẠI PHẬT ĐẢNH NHƯ LAI MẬT NHÂN TU CHỨNG LIỄU NGHĨA CHƯ BỒ TÁT VẠN HẠNH THỦ LĂNG NGHIÊM KINH TÔNG THÔNG ",
 	links: [
 		{
 			name: "Twitter",

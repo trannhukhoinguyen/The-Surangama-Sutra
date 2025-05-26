@@ -21,7 +21,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://fuwari.vercel.app/",
+	site: "https://surangama-sutra.vercel.app/",
 	base: "/",
 	trailingSlash: "always",
 	integrations: [
